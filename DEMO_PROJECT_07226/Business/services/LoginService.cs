@@ -16,7 +16,7 @@ public class LoginService : ILoginService {
     }
 
     public bool IsLoggedIn() {
-
+        return false;
     }
 
     public void RequireLoggedInUser() {
