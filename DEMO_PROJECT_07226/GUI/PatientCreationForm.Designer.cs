@@ -30,7 +30,11 @@ partial class PatientCreationForm {
             this.firstNameField = new System.Windows.Forms.TextBox();
             this.lastNameField = new System.Windows.Forms.TextBox();
             this.healthCardNumberField = new System.Windows.Forms.TextBox();
-            this.createPatientButton = new System.Windows.Forms.Button();
+            this.actionButton = new System.Windows.Forms.Button();
+            this.lblTextId = new System.Windows.Forms.Label();
+            this.lblValueId = new System.Windows.Forms.Label();
+            this.lblRegistrationDate = new System.Windows.Forms.Label();
+            this.registrationDateControl = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // firstNameLabel
@@ -84,22 +88,60 @@ partial class PatientCreationForm {
             this.healthCardNumberField.Size = new System.Drawing.Size(250, 27);
             this.healthCardNumberField.TabIndex = 5;
             // 
-            // createPatientButton
+            // actionButton
             // 
-            this.createPatientButton.Location = new System.Drawing.Point(214, 166);
-            this.createPatientButton.Name = "createPatientButton";
-            this.createPatientButton.Size = new System.Drawing.Size(250, 29);
-            this.createPatientButton.TabIndex = 6;
-            this.createPatientButton.Text = "Create new patient";
-            this.createPatientButton.UseVisualStyleBackColor = true;
-            this.createPatientButton.Click += new System.EventHandler(this.createPatientButton_Click);
+            this.actionButton.Location = new System.Drawing.Point(214, 200);
+            this.actionButton.Name = "actionButton";
+            this.actionButton.Size = new System.Drawing.Size(250, 29);
+            this.actionButton.TabIndex = 6;
+            this.actionButton.Text = "Placeholder";
+            this.actionButton.UseVisualStyleBackColor = true;
+            this.actionButton.Click += new System.EventHandler(this.ActionButton_Click);
+            // 
+            // lblTextId
+            // 
+            this.lblTextId.Location = new System.Drawing.Point(58, 46);
+            this.lblTextId.Name = "lblTextId";
+            this.lblTextId.Size = new System.Drawing.Size(150, 25);
+            this.lblTextId.TabIndex = 7;
+            this.lblTextId.Text = "ID:";
+            this.lblTextId.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblValueId
+            // 
+            this.lblValueId.Location = new System.Drawing.Point(214, 46);
+            this.lblValueId.Name = "lvlValueId";
+            this.lblValueId.Size = new System.Drawing.Size(250, 25);
+            this.lblValueId.TabIndex = 8;
+            this.lblValueId.Text = "placeholder";
+            this.lblValueId.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblRegistrationDate
+            // 
+            this.lblRegistrationDate.Location = new System.Drawing.Point(58, 151);
+            this.lblRegistrationDate.Name = "lblRegistrationDate";
+            this.lblRegistrationDate.Size = new System.Drawing.Size(150, 25);
+            this.lblRegistrationDate.TabIndex = 9;
+            this.lblRegistrationDate.Text = "Registration date:";
+            this.lblRegistrationDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // registrationDateControl
+            // 
+            this.registrationDateControl.Location = new System.Drawing.Point(214, 148);
+            this.registrationDateControl.Name = "registrationDateControl";
+            this.registrationDateControl.Size = new System.Drawing.Size(250, 27);
+            this.registrationDateControl.TabIndex = 10;
             // 
             // PatientCreationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(532, 253);
-            this.Controls.Add(this.createPatientButton);
+            this.Controls.Add(this.registrationDateControl);
+            this.Controls.Add(this.lblRegistrationDate);
+            this.Controls.Add(this.lblValueId);
+            this.Controls.Add(this.lblTextId);
+            this.Controls.Add(this.actionButton);
             this.Controls.Add(this.healthCardNumberField);
             this.Controls.Add(this.lastNameField);
             this.Controls.Add(this.firstNameField);
@@ -121,5 +163,9 @@ partial class PatientCreationForm {
     private TextBox firstNameField;
     private TextBox lastNameField;
     private TextBox healthCardNumberField;
-    private Button createPatientButton;
+    private Button actionButton;
+    private Label lblTextId;
+    private Label lblValueId;
+    private Label lblRegistrationDate;
+    private DateTimePicker registrationDateControl;
 }

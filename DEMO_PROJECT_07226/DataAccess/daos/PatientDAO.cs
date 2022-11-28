@@ -34,7 +34,8 @@ public class PatientDAO : IDAO {
         this.usageContext.SaveChanges();
     }
 
-    public void SaveModifications() {
+    public void SaveModifications(PatientDTO patient) {
+        this.usageContext.Patients.Update(patient);
         this.usageContext.SaveChanges();
     }
 

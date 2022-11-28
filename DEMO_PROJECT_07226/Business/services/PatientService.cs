@@ -20,18 +20,41 @@ public class PatientService : IService {
     }
 
 
-    public void OpenPatientCreationForm() {
-        this.patientCreationForm.ShowDialog();
+    public PatientDTO OpenModalForCreation() {
+        PatientDTO patientDto = new PatientDTO();
+        return this.patientCreationForm.OpenWithIntent(patientDto, ViewIntent.CREATION);
     }
 
-    public void ClosePatientCreationForm() {
-        this.patientCreationForm.DialogResult = DialogResult.Cancel;
+    public PatientDTO OpenModalForDisplay(int id) {
+        PatientDTO patient = this.patientDAO.GetById(id);
+        return this.OpenModalForDisplay(patient);
     }
 
-    public PatientDTO CreateNewPatient(string firstName, string lastName, string healthCarnNumber) {
-        PatientDTO newPatient = new PatientDTO(firstName, lastName, healthCarnNumber);
+    public PatientDTO OpenModalForDisplay(PatientDTO patient) {
+        return this.patientCreationForm.OpenWithIntent(patient, ViewIntent.VISUALIZATION);
+    }
+
+    public PatientDTO OpenModalForModification(PatientDTO patient) {
+        return this.patientCreationForm.OpenWithIntent(patient, ViewIntent.MODIFICATION);
+    }
+
+    public PatientDTO OpenModalForDeletion(PatientDTO patient) {
+        return this.patientCreationForm.OpenWithIntent(patient, ViewIntent.DELETION);
+    }
+
+
+    public PatientDTO CreateNewPatient(PatientDTO newPatient) {
         this.patientDAO.SaveNewPatient(newPatient);
-        this.ClosePatientCreationForm();
         return newPatient;
+    }
+
+    public PatientDTO UpdatePatient(PatientDTO patient) {
+        this.patientDAO.SaveModifications(patient);
+        return patient;
+    }
+
+    public PatientDTO DeletePatient(PatientDTO patient) {
+        this.patientDAO.DeletePatient(patient);
+        return patient;
     }
 }
