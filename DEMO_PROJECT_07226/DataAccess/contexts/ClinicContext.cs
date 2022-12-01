@@ -16,6 +16,7 @@ public class ClinicContext : DbContext {
     public DbSet<PatientDTO> Patients { get; set; }
     public DbSet<AppointmentDTO> Appointments { get; set; }
     public DbSet<DoctorDTO> Doctors { get; set; }
+    public DbSet<ClinicDoctorDTO> ClinicDoctors { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
         optionsBuilder.UseSqlServer("Server=.\\SQL2019EXPRESS;Integrated security=true;Database=db_project_07226;TrustServerCertificate=true;");

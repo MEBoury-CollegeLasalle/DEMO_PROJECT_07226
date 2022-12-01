@@ -24,6 +24,8 @@ public class DoctorDTO : IDTO {
 
     public List<AppointmentDTO> Appointments { get; set; } = null!;
 
+    public List<ClinicDoctorDTO> DoctorClinics { get; set; } = null!;
+
 
     public DoctorDTO(string firstName, string lastName) { 
         this.FirstName = firstName;

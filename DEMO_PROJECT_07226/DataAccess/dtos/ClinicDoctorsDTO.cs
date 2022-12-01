@@ -8,16 +8,23 @@ using System.Threading.Tasks;
 
 namespace DEMO_PROJECT_07226.DataAccess.dtos;
 
-[Table("Clinics")]
-public class ClinicDTO : IDTO {
+[Table("ClinicDoctors")]
+public class ClinicDoctorDTO {
 
     [Key]
     public int Id { get; set; }
 
+    [Required]
+    public int DoctorId { get; set; }
+
+    [Required]
+    public int ClinicId { get; set; }
 
 
+    [ForeignKey("DoctorId")]
+    public DoctorDTO Doctor { get; set; }
 
-    public List<ClinicDoctorDTO> ClinicDoctors { get; set; } = null!;
 
-
+    [ForeignKey("ClinicId")]
+    public ClinicDTO Clinic { get; set; }
 }

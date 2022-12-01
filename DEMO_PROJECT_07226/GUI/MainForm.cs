@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,6 +17,6 @@ public partial class MainForm : Form {
     }
 
     private void buttonCreateNewPatient_Click(object sender, EventArgs e) {
-        MainService.getInstance().GetPatientService().OpenPatientCreationForm();
+        //MainService.getInstance().GetPatientService().OpenPatientCreationForm();
     }
 }
